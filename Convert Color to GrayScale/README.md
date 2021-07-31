@@ -6,7 +6,10 @@ This project tries to analyze the time taken to convert different number of imag
 ```
 pip install opencv-python
 ```
-
+## Command Line Solution 
+```
+py script <inputdir> <outputdir> 
+```
 ## Results 
 
 | Number of Images |Time taken to convert to Gray Scale| 
