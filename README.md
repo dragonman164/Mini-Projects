@@ -7,6 +7,9 @@ Minor Projects under guidance of Dr. Prashant Singh Rana  (Professor at TIET �
 
 3. Convert Colored Images 🖌️ to Gray Scale Images using opencv library and analyze the results for different number of files. Also, develop a command line solution <a href="https://github.com/dragonman164/Minor-Projects/tree/master/Convert%20Color%20to%20GrayScale">Click Here to view </a>
 
+
+4. Convert Colored Videos 📹 to Gray Scale and analyze the results for different number of files. Also, develop a command line solution. <a href="https://github.com/dragonman164/Minor-Projects/tree/master/Convert%20Video%20to%20Gray%20Scale">Click Here to view </a>
+
 more to be added soon ....
 
 <br>
