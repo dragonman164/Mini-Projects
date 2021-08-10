@@ -7,7 +7,6 @@ This project tries to convert characters of lowerr case text files to upper case
 ## Install dependencies using pip
 ```
 pip install matplotlib
-pip install numpy
 ```
 
 
