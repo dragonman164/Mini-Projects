@@ -2,17 +2,17 @@ import sys
 import threading
 from queue import Queue
 import threading
-import shutil
 import os
 import time
+import cv2
 
 
 
 def task(filename,inp,out):
-    inputFile = open(f"./{inp}/{filename}", "r")
-    content = inputFile.read()
-    outputFile = open(f"./{out}/{filename}", "w")
-    outputFile.write(content.upper())  
+    start = time.time()
+    check = cv2.imread(f'./{inp}/{filename}')
+    gray = cv2.cvtColor(check,cv2.COLOR_BGR2GRAY)
+    cv2.imwrite(f'./{out}/{filename}',gray)
 
 
 # Function to send task to threads
@@ -36,8 +36,8 @@ else:
 # Loop For Number of Threads
 t = threads
 jobs = Queue()
-os.mkdir(outpurDir)
-for elem in os.listdir(inputDir):
+os.mkdir('output')
+for elem in os.listdir('input'):
     jobs.put(elem)
 start = time.time()
 for i in range(t):
