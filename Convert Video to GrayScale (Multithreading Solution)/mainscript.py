@@ -8,12 +8,20 @@ import cv2
 
 
 # Function to Convert the Image to Gray Scale
-def task(filename):
-    start = time.time()
-    check = cv2.imread(f'./input/{filename}')
-    gray = cv2.cvtColor(check,cv2.COLOR_BGR2GRAY)
-    cv2.imwrite(f'./output/{filename}',gray)
 
+def task(video_path):
+    video = cv2.VideoCapture(f'./input/{video_path}')
+    while True: 
+        ret, frame = video.read()
+        if ret: 
+            gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+            cv2.imshow('temp',gray)
+            if cv2.waitKey(1) & 0xFF == ord('s'):
+                break
+        else : 
+            break
+
+    video.release()
 
    
 # Function to send task to threads
@@ -23,20 +31,19 @@ def do_stuff(q):
         task(value)
         q.task_done()
 
-# Step 1 : Generate 500 Images 
-os.mkdir('input')
-for j in range(500):
-    shutil.copy("./check.jpg",dst=f"./input/copy{j}.jpg")
+
+# Create 50 Video Files
+os.mkdir(f'input')
+for i in range(10):
+    shutil.copy(src='check.mp4',dst=f'./input/temp{i}.mp4')
+ 
 
 
-
-
-# Step 3 : Convert Images to Gray Scale and note the time taken
+# Convert Images to Gray Scale and note the time taken
 data = {}
 
 for t in [j*5 for j in range(1,6)]:
     jobs = Queue()
-    os.mkdir('output')
     for elem in os.listdir('input'):
         jobs.put(elem)
     start = time.time()
@@ -48,14 +55,13 @@ for t in [j*5 for j in range(1,6)]:
     end = time.time()
     print(t, end - start)
     data[t] = end - start
-    shutil.rmtree('output')
 
 
-# Step 4 : Plot the required Data
+#  Plot the required Data
 print(data)
 
 plt.plot(list(data.keys()),list(data.values()))
 plt.xlabel("Number of threads")
 plt.ylabel("Time Taken")
-plt.title("Time taken to convert 10 Videos from color to gray Scale")
+plt.title("Time taken to convert 100 Images from color to gray Scale")
 plt.show()

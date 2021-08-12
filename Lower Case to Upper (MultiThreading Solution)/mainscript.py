@@ -56,7 +56,7 @@ for t in [j*5 for j in range(1,5)]:
     shutil.rmtree('output')
 
 
-# # Step 4 : Plot the required Data
+# Step 4 : Plot the required Data
 print(data)
 
 plt.plot(list(data.keys()),list(data.values()))

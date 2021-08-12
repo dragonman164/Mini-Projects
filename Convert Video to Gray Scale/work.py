@@ -25,7 +25,7 @@ def convert_to_gray_scale(video_path):
   
 
 
-# # Create copies of video files 10,20,30,40,50 and note time taken 
+# Create copies of video files 10,20,30,40,50 and note time taken 
 data = {}
 for i in range(5):
     os.mkdir(f'{i+1}10th')

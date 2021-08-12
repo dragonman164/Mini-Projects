@@ -9,7 +9,6 @@ import cv2
 
 
 def task(filename,inp,out):
-    start = time.time()
     check = cv2.imread(f'./{inp}/{filename}')
     gray = cv2.cvtColor(check,cv2.COLOR_BGR2GRAY)
     cv2.imwrite(f'./{out}/{filename}',gray)
