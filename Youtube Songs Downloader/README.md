@@ -7,6 +7,7 @@ A simple web application to download youtube songs and send them to desired emai
 ```
 pip install pytube
 pip install flask
+pip install pydub
 ```
 
 

@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 from downloader import download_song
 from mailsender import send_mail
-
+from createzip import create_zip
 
 app = Flask(__name__)
 
@@ -12,6 +12,7 @@ def main_page():
         emailid = request.form['emailid']
         limit = int(request.form['limit'])
         download_song(keyword,limit)
+        create_zip()
         send_mail(emailid)
         # print(keyword,emailid,limit)
     return render_template("index.html")

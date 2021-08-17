@@ -2,6 +2,6 @@
 songs will be sent """
 
 
-email = "your_email_id"
-password = "your_password_here"
+email = "sanidhiyafirefox123@gmail.com"
+password = "icaedelzobclybkl"
 
