@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Painting App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="main.js"></script>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="toolbar">
+            <!-- <a class="selected" href="#" id="open" onclick="OpenImage()">
+            <img src="open.png">
+            </a> -->
+            <a href="#" class="selected" id="rectangle" onclick="ChangeTool('rectangle')">
+            <img src="rectangle.png">
+            </a>  
+           
+        </div><br>
+
+        <canvas id="my-canvas" width="600" height="300" ondblclick="deleteDBL()"></canvas>
+
+        <!-- <div id="img-data-div">
+            <a href="#" id="img-file" download="image.png">Download Image</a>
+        </div> -->
+
+            <button type="button" onclick="clearCanvas()">Clear Canvas</button>
+       
+
+
+    </div>
+</body>
+</html>
